@@ -12,7 +12,7 @@ export const MetersTableError: FC<MetersTableErrorProps> = ({
     <TableRow>
       <TableCell>
         <div className="absolute inset-0 z-10 flex items-center justify-center font-medium text-[14px]">
-          {errorMessage}
+          Ошибка: {errorMessage}
         </div>
       </TableCell>
     </TableRow>
