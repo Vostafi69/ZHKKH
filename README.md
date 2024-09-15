@@ -73,13 +73,13 @@ $ git clone https://github.com/Vostafi69/ZHKKH.git
 $ cd ZHKKH
 ```
 
-Установить зависимости
+Установить зависимости:
 
 ```sh
 $ npm i
 ```
 
-Запустить проект
+Запустить проект:
 
 ```sh
 $ npm run dev
