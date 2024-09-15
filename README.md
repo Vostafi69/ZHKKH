@@ -89,4 +89,4 @@ $ npm run dev
 
 Таблица отображения счетчиков воды
 
-![Таблица отображения счетчиков воды](https://github.com/Vostafi69/ZHKKH/blob/main/examples/example.png)
+![Таблица отображения счетчиков воды](https://github.com/Vostafi69/ZHKKH/blob/main/examples/screen.png)
