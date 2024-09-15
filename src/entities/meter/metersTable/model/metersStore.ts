@@ -1,11 +1,17 @@
 import { cast, flow, t } from 'mobx-state-tree';
-import { MetersResponceModel, MetersResponceModelType } from './meterModel';
+import {
+  AreaModel,
+  AreaModelType,
+  MetersResponceModel,
+  MetersResponceModelType,
+} from './meterModel';
 import { api } from '@/shared/lib/api';
 import { AxiosError, AxiosResponse } from 'axios';
 
 export const MetersStore = t
   .model('MetersStore', {
     data: t.maybe(MetersResponceModel),
+    areas: t.map(AreaModel),
     isLoading: t.optional(t.boolean, false),
     error: t.maybeNull(t.string),
   })
@@ -40,7 +46,30 @@ export const MetersStore = t
         self.isLoading = false;
       }
     }),
+    fetchAddresses: flow(function* () {
+      const addressIds = self.data?.results
+        .map((meter) => meter.area.id)
+        .filter((id) => id != null);
+
+      const uniqueAddressIds = [...new Set(addressIds)];
+
+      for (const id of uniqueAddressIds) {
+        if (!self.areas.has(id)) {
+          try {
+            const response: AxiosResponse<AreaModelType> = yield api.get(
+              `areas/${id}`
+            );
+            self.areas.put(response.data);
+          } catch (error) {
+            self.error = (error as AxiosError).message;
+          }
+        }
+      }
+    }),
     afterCreate() {
-      this.getMeters();
+      this.getMeters().then(() => this.fetchAddresses());
+    },
+    fetchAllMeterData(offset: number) {
+      this.getMeters(offset).then(() => this.fetchAddresses());
     },
   }));

@@ -11,7 +11,13 @@ export const MetersTableHeadList = memo(
       <TableRow>
         {columns.map((columnName, index) => (
           <TableHead
-            className={index === columns.length - 1 ? 'w-16' : ''}
+            className={
+              index === columns.length - 1
+                ? 'w-16'
+                : index === 0
+                ? 'text-center'
+                : ''
+            }
             key={index}
           >
             {columnName}
