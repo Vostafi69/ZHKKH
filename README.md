@@ -48,3 +48,6 @@ $ npm run dev
 
 ## Примеры
 
+Таблица отображения счетчиков воды
+
+![Таблица отображения счетчиков воды](https://github.com/Vostafi69/ZHKKH/raw/master/examples/example.png)
