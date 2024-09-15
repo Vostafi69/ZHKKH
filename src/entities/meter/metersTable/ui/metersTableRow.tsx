@@ -35,7 +35,11 @@ export const MetersTableRow = observer(
         <TableCell>{dateToRuString(meter.installation_date)}</TableCell>
         <TableCell>{meter.is_automatic_view}</TableCell>
         <TableCell>{meter.initial_values[0]}</TableCell>
-        <TableCell>{areas.get(meter.area.id)?.house.address}</TableCell>
+        <TableCell>
+          {areas.get(meter.area.id)?.house.address +
+            ', ' +
+            areas.get(meter.area.id)?.str_number_full}
+        </TableCell>
         <TableCell>{meter.description}</TableCell>
         <TableCell className="flex justify-center items-center h-[inherit]">
           <DeleteMeterButton
