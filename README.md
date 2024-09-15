@@ -1,7 +1,9 @@
-# Тестовое задание
-# на позицию Frontend-разработчик
+<h1 align="center">Тестовое задание</h1>
+<h2 align="center">на позицию Frontend-разработчик</h2>
 
 > Создать приложение для отображения списка счётчиков горячей и холодной воды.
+>
+> ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white)![Vite](https://img.shields.io/badge/vite-%23646CFF.svg?style=for-the-badge&logo=vite&logoColor=white)![TailwindCSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white)
 
 ## Содержание
 
@@ -32,10 +34,15 @@ $ git clone https://github.com/Vostafi69/ZHKKH.git
 $ cd ZHKKH
 ```
 
-Установить зависимости и запустить проект
+Установить зависимости
 
 ```sh
 $ npm i
+```
+
+Запустить проект
+
+```sh
 $ npm run dev
 ```
 
