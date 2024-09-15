@@ -11,6 +11,8 @@
 >
 > https://www.figma.com/design/gxVXNv5MEY8RQ1KXRVvkUT/%D0%A2%D0%B5%D1%81%D1%82-(%D1%84%D1%80%D0%BE%D0%BD%D1%82)?node-id=0-1&t=QQ9ijj1biJPPjj7s-0
 
+<hr/>
+
 1. Список счётчиков.
    Счётчики получать запросом GET http://showroom.eis24.me/api/v4/test/meters/
    Параметры limit=20 и offset (выводить по 20 на страницу).
