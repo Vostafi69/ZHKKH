@@ -15,6 +15,7 @@ import { MetersTableSkeleton } from './metersTableSkeleton';
 import { MetersTableHeadList } from './metersTableHeadList';
 import ReactPaginate from 'react-paginate';
 import { MetersTableError } from './metersTableError';
+import { LIMIT } from '../utils/constant';
 
 const columns = [
   '№',
@@ -34,7 +35,7 @@ export const MetersTable = observer(() => {
   const { data, isLoading, error, fetchAllMeterData } = meters;
 
   const handlePageClick = (event: { selected: number }) => {
-    offsetRef.current = (event.selected * 20) % (data?.count || 1);
+    offsetRef.current = (event.selected * LIMIT) % (data?.count || 1);
     fetchAllMeterData(offsetRef.current);
   };
 
@@ -68,7 +69,9 @@ export const MetersTable = observer(() => {
                   pageLinkClassName="w-8 h-8 font-normal flex justify-center items-center rounded-md bg-white border border-neutral-300 text-neutral-800"
                   activeLinkClassName="!bg-neutral-100"
                   breakLinkClassName="w-8 h-8 font-normal flex justify-center items-center rounded-md bg-white border border-neutral-300 text-neutral-800"
-                  pageCount={(data?.count && Math.ceil(data.count / 20)) || 1}
+                  pageCount={
+                    (data?.count && Math.ceil(data.count / LIMIT)) || 1
+                  }
                   onPageChange={handlePageClick}
                 />
               </TableCell>

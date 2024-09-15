@@ -1,6 +1,7 @@
 import { Skeleton } from '@/shared/ui/skeleton';
 import { TableCell, TableRow } from '@/shared/ui/table';
 import { FC } from 'react';
+import { LIMIT } from '../utils/constant';
 
 interface MetersTableSkeletonProps {
   cellCount?: number;
@@ -9,7 +10,7 @@ interface MetersTableSkeletonProps {
 
 export const MetersTableSkeleton: FC<MetersTableSkeletonProps> = ({
   cellCount = 7,
-  rowCount = 20,
+  rowCount = LIMIT,
 }) => {
   return (
     <>

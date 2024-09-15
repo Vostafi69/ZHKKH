@@ -7,6 +7,7 @@ import {
 } from './meterModel';
 import { api } from '@/shared/lib/api';
 import { AxiosError, AxiosResponse } from 'axios';
+import { LIMIT } from '../utils/constant';
 
 export const MetersStore = t
   .model('MetersStore', {
@@ -16,7 +17,7 @@ export const MetersStore = t
     error: t.maybeNull(t.string),
   })
   .actions((self) => ({
-    getMeters: flow(function* (offset: number = 0, limit: number = 20) {
+    getMeters: flow(function* (offset: number = 0, limit: number = LIMIT) {
       self.isLoading = true;
       self.error = null;
 
